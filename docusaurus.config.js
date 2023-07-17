@@ -4,9 +4,12 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
+
 /** @type {import('@docusaurus/types').Config} */
-module.exports = async function createConfigAsync(){
-  return {
+module.exports = {
     title: 'Blog | ekurea.net',
     tagline: 'Dinosaurs are cool',
     favicon: 'img/favicon.ico',
@@ -42,8 +45,8 @@ module.exports = async function createConfigAsync(){
           blog: {
             routeBasePath: '/',
             showReadingTime: true,
-            remarkPlugins:[(await import('remark-math')).default],
-            rehypePlugins: [(await import('rehype-katex')).default],
+            remarkPlugins: [math],
+            rehypePlugins: [katex],
             // Please change this to your repo.
             // Remove this to remove the "edit this page" links.
             editUrl:
@@ -56,7 +59,7 @@ module.exports = async function createConfigAsync(){
       ],
     ],
 
-    stylesheets:[
+    stylesheets: [
       {
         href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
         type: 'text/css',
@@ -107,5 +110,4 @@ module.exports = async function createConfigAsync(){
           darkTheme: darkCodeTheme,
         },
       }),
-  };
 };
