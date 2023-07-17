@@ -94,7 +94,7 @@ module.exports = {
                 },
                 {
                   label: 'Misskey',
-                  href: 'https://misskey.ekurea.net/@ekurea.net',
+                  href: 'https://misskey.ekurea.net/@ekurea',
                 },
                 {
                   label: 'keybase',
